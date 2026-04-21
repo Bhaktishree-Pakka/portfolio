@@ -7,7 +7,7 @@ export default function Hero() {
 
         <div className="hero-text">
           <h1>Hi, I'm Bhaktishree</h1>
-          <p>Full Stack Developer | React | Next.js</p>
+          <p>Full Stack Developer</p>
           <a href="https://github.com/Bhaktishree-Pakka" className="btn">GitHub</a>
           <a href="https://www.linkedin.com/in/bhaktishree-pakka-080ba2268?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="btn">LinkedIn</a>
         </div>
