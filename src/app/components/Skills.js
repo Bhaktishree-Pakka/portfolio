@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Skills() {
   const skills = [
     { name: "HTML", icon: "/html.png" },
-    { name: "CSS", icon: "/css.png" },
+    { name: "CSS", icon: "/CSS.png" },
     { name: "JavaScript", icon: "/javascript-image.png" },
     { name: "React", icon: "/react-image.png" },
     { name: "Java", icon: "/java-image.png" },
