@@ -19,16 +19,13 @@ export default function About() {
 
         <div className="about-text">
           <p>
-            Final-year CSE student with strong skills in React, Next.js, and full-stack development.
+            I am a final-year Computer Science student passionate about full-stack web development.
+            I specialize in React, Next.js, and building responsive, user-friendly web applications.
+            I enjoy solving real-world problems through clean and efficient code.
+            I have worked on multiple personal projects to strengthen my development skills.
+            I am actively seeking opportunities to grow as a software developer and contribute to impactful projects.
           </p>
 
-          <p>
-            Passionate about building real-world projects, problem solving, and learning new technologies.
-          </p>
-
-          <p>
-            Seeking opportunities to grow and contribute as a software developer.
-          </p>
         </div>
 
       </div>
