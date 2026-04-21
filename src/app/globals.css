@@ -57,14 +57,16 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 10px 6%;
-  background: #112240;
+  background-color: #112240;  /* SOLID ONLY */
   position: sticky;
   top: 0;
   z-index: 1000;
   height: 70px;
+  transition: none; /* no fading effects */
 }
 
-/* LEFT LOGO */
+/* ================= LOGO ================= */
+
 .logo {
   display: flex;
   align-items: center;
@@ -78,7 +80,8 @@ section {
   border: 2px solid #64ffda;
 }
 
-/* CENTER NAV */
+/* ================= NAV LINKS ================= */
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -86,15 +89,100 @@ section {
   list-style: none;
 }
 
-.nav-links li {
+.nav-links a {
+  color: #ccd6f6;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s ease;
+  padding-bottom: 3px;
+}
+
+.nav-links a:hover {
+  color: #64ffda;
+}
+
+/* ACTIVE LINK (DARK MODE) */
+.nav-links a.active {
+  color: #64ffda;
+  font-weight: 600;
+  border-bottom: 2px solid #64ffda;
+}
+
+/* ================= RIGHT SIDE ================= */
+
+.nav-right {
   display: flex;
   align-items: center;
+  gap: 12px;
+}
+
+/* BUTTON */
+.btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ================= HAMBURGER ================= */
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccd6f6;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 6%;
+  background: #112240;   /* SOLID DARK */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 70px;
+  transition: none;
+}
+
+/* LIGHT MODE NAVBAR (SOLID WHITE) */
+body.light-mode .navbar {
+  background: #ffffff;   /* SOLID WHITE */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #64ffda;
+}
+
+/* ================= NAV LINKS ================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
 }
 
 .nav-links a {
   color: #ccd6f6;
   text-decoration: none;
   font-size: 15px;
+  padding-bottom: 3px;
   transition: 0.3s;
 }
 
@@ -102,38 +190,100 @@ section {
   color: #64ffda;
 }
 
+/* ACTIVE LINK (DARK) */
+.nav-links a.active {
+  color: #64ffda;
+  font-weight: 600;
+  border-bottom: 2px solid #64ffda;
+}
+
+/* ACTIVE LINK (LIGHT) */
+body.light-mode .nav-links a.active {
+  color: #06b6d4;
+  border-bottom: 2px solid #06b6d4;
+}
+
+/* LIGHT MODE LINKS */
+body.light-mode .nav-links a {
+  color: #0f172a;
+}
+
+body.light-mode .nav-links a:hover {
+  color: #06b6d4;
+}
+
+/* ================= MOBILE MENU ================= */
+
 .nav-links.active {
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 70px;
-  right: 0;
   background: #112240;
-  width: 200px;
+  width: auto;
+  min-width: 140px;
+  max-width: 200px;
+  border-radius: 12px;
+  right: 10px;
   padding: 20px;
+  gap: 15px;
 }
 
-/* RIGHT SIDE */
+/* LIGHT MODE MOBILE MENU */
+body.light-mode .nav-links.active {
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-left: 1px solid #e2e8f0;
+}
+
+body.light-mode .nav-links.active a {
+  color: #0f172a;
+}
+
+/* ================= RIGHT SIDE ================= */
+
 .nav-right {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* BUTTON FIX */
+/* BUTTON */
 .btn {
   padding: 6px 12px;
   font-size: 14px;
   border-radius: 8px;
+  cursor: pointer;
+  background: #64ffda;
+  border: none;
+  color: #0a192f;
+  transition: 0.3s;
 }
 
-/* HAMBURGER */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* LIGHT BUTTON */
+body.light-mode .btn {
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+  color: white;
+}
+
+/* ================= HAMBURGER ================= */
+
 .menu-icon {
   display: none;
   font-size: 24px;
   cursor: pointer;
   color: #ccd6f6;
 }
+
+body.light-mode .menu-icon {
+  color: #0f172a;
+}
+
+
 /* HERO */
 .hero-content {
   display: flex;
@@ -197,7 +347,7 @@ body.light-mode .hero-text p {
 .about-content p {
   max-width: 800px;
   color: #8892b0;
-  line-height: 1.2;
+  line-height: 1.5;
   margin-bottom: 18px;
 }
 
@@ -372,18 +522,18 @@ section:hover {
     margin: 0 auto;
   }
 
-  .navbar {
-    padding: 10px 5%;
-    height: 65px;
-  }
-
   .nav-links {
     display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .menu-icon {
     display: block;
   }
+
 
   .logo-img {
     width: 38px;
@@ -410,18 +560,6 @@ section:hover {
 body.light-mode {
   background: #f1f5f9;   /* soft bluish gray */
   color: #0f172a;        /* deep dark text */
-}
-
-/* NAVBAR */
-body.light-mode .navbar {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
-
-/* NAV LINKS */
-body.light-mode .nav-links a {
-  color: #0f172a;
 }
 
 /* HERO TEXT */
@@ -493,11 +631,6 @@ body.light-mode p {
   color: #475569;
 }
 
-/* Navbar links */
-body.light-mode .nav-links a {
-  color: #0f172a;
-}
-
 /* Skill text */
 body.light-mode .skill-card p {
   color: #334155;
@@ -531,5 +664,15 @@ body.light-mode textarea::placeholder {
 
 /* Footer text */
 body.light-mode footer {
+  color: #475569;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+  color: #0f172a;
+}
+
+body.light-mode p {
   color: #475569;
 }
